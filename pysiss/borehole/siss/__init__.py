@@ -7,4 +7,4 @@
     description: Initialisation of the pysiss.borehole.siss module.
 """
 
-import borehole_generator
+import pysiss.borehole.siss.borehole_generator

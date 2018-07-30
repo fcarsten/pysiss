@@ -6,9 +6,9 @@
     description: Init file for pysiss
 """
 
-import borehole
-import coverage
-import vocabulary
-import utilities
+import pysiss.borehole
+import pysiss.coverage
+import pysiss.vocabulary
+import pysiss.utilities
 
 __all__ = [borehole, coverage, vocabulary, utilities]

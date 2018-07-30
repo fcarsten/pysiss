@@ -7,6 +7,6 @@
     description: Initialisation of the pysiss.borehole.importers module.
 """
 
-import nvcl
+import pysiss.webservices.nvcl
 
 __all__ = [nvcl]

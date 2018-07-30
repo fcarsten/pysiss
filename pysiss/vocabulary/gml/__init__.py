@@ -5,7 +5,6 @@
 
     description: Dealing with Geography ML stuff
 """
-
-import unmarshallers
+from pysiss.vocabulary.gml import unmarshallers
 
 __all__ = [unmarshallers]

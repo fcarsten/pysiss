@@ -6,9 +6,9 @@
     description: init file
 """
 
-import gsml
-import gml
-import erml
-import namespaces
+import pysiss.vocabulary.gsml
+import pysiss.vocabulary.gml
+import pysiss.vocabulary.erml
+import pysiss.vocabulary.namespaces
 
 __all__ = [gsml, gml, erml, namespaces]

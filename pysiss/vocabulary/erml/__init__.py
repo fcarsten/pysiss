@@ -5,7 +5,6 @@
 
     description: init file
 """
-
-import unmarshallers
+from pysiss.vocabulary.erml import unmarshallers
 
 __all__ = [unmarshallers]

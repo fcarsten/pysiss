@@ -7,8 +7,8 @@
     description: Utility functions for the cwavelet module.
 """
 
-from maths import *
-from collection import Collection
-from id_object import id_object
+from pysiss.utilities.maths import *
+from pysiss.utilities.collection import Collection
+from pysiss.utilities.id_object import id_object
 # from projection import project
-from singleton import Singleton
+from pysiss.utilities.singleton import Singleton

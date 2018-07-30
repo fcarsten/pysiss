@@ -263,7 +263,7 @@ def plot_point_dataset_data(point_dataset, keys_to_plot=None):
                         dataset=point_dataset.depths,
                         orientation='vertical')
         except TypeError:
-            print key
+            print (key)
         axes.set_xlabel("")
         if i == 0:
             axes.set_ylabel('Depth (m)')

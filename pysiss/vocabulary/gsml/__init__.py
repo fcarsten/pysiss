@@ -6,6 +6,6 @@
     description: init file
 """
 
-import unmarshallers
+import pysiss.vocabulary.gsml.unmarshallers
 
 __all__ = [unmarshallers]

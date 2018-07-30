@@ -15,7 +15,7 @@ import numpy
 import pandas
 import requests
 from lxml import etree
-from StringIO import StringIO
+from io import StringIO
 
 
 NVCL_DEFAULT_ENDPOINTS = {
@@ -153,7 +153,10 @@ class NVCLImporter(object):
         wfsresponse = wfs.getfeature(
             typename="nvcl:ScannedBoreholeCollection",
             maxfeatures=maxids)
-        xmltree = etree.parse(wfsresponse)
+
+        wfs_content = StringIO(wfsresponse.read())
+        parser = etree.XMLParser(recover=True, encoding='utf-8')
+        xmltree = etree.parse(wfs_content, parser)
 
         idents = {}
         bhstring = ".//{http://www.auscope.org/nvcl}scannedBorehole"
@@ -250,7 +253,7 @@ class NVCLImporter(object):
         analyte_ident_dict = self.get_analyte_idents(hole_ident, dataset_ident)
         if len(analyte_ident_dict) == 0:
             # This dataset has no analytes
-            print 'Warning, dataset {0} has no analytes'.format(dataset_ident)
+            print ('Warning, dataset {0} has no analytes'.format(dataset_ident))
             return None
 
         # Generate request URL
@@ -357,7 +360,7 @@ class NVCLImporter(object):
 
             return bhl
 
-        except Exception, err:
+        except Exception as err:
             if raise_error:
                 raise err
             else:
